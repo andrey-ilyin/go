@@ -14,7 +14,7 @@ func main() {
 			fmt.Printf("Go to the store and buy some more, %v bottles of beer.\n\n", MAX_BOTTLES)
 		} else {
 			fmt.Printf("%v bottles of beer on the wall, %v bottles of beer.\n", i, i)
-			var remainAfter string = strconv.Itoa(i-1)
+			var remainAfter string = strconv.Itoa(i - 1)
 			if i == 1 {
 				remainAfter = "no more"
 			}
