@@ -25,7 +25,6 @@ type action int
 
 type findResult struct {
 	value interface{}
-	found bool
 }
 
 const (
@@ -86,15 +85,13 @@ func (s safeSlice) run() {
 				result := findResult{}
 				if command.index < len(data) && command.index >= 0 {
 					result.value = data[command.index]
-					result.found = true
 				} else {
 					result.value = nil
-					result.found = false
 				}
 				command.result <- result
 			case remove:
 				if command.index < len(data) && command.index >= 0 {
-					data = append(data[:command.index], data[:command.index+1]...)
+					data = append(data[:command.index], data[command.index+1:]...)
 				}
 			case length:
 				command.result <- len(data)
