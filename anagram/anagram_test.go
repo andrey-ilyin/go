@@ -14,6 +14,7 @@ func TestAnagram(t *testing.T) {
 
 		{"test", "fail", false},
 		{"ave Barry", "Ray Adverb", false},
+		{"", "", false},
 	}
 
 	for _, c := range cases {
